@@ -1,0 +1,24 @@
+{
+  "name": "trackoss-playwright",
+  "version": "1.0.0",
+  "description": "Playwright test suite for TrackOSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --project=ui-*",
+    "test:api": "npx playwright test --project=api",
+    "test:gui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.0",
+    "dotenv": "^16.0.3"
+  },
+  "dependencies": {
+    "form-data": "^4.0.4"
+  }
+}

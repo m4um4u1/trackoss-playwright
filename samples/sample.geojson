@@ -1,0 +1,19 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-122.3321, 47.6062, 10],
+            [-122.3421, 47.6162, 15]
+          ]
+        },
+        "properties": {
+          "name": "Test Route",
+          "description": "A test cycling route"
+        }
+      }
+    ]
+  }
