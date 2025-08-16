@@ -4,7 +4,7 @@ const config = defineConfig({
   globalSetup: require.resolve("./global.setup.ts"),
   testDir: "./tests",
   // Test directory pattern to run all tests
-  testMatch: ["**/ui/**/*.spec.js", "**/api/**/*.spec.js"],
+  testMatch: ["**/ui/**/*.spec.ts", "**/api/**/*.spec.ts", "**/features/**/*.spec.ts"],
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
@@ -44,6 +44,16 @@ const config = defineConfig({
       testMatch: "**/api/**/*.spec.ts",
       use: {
         baseURL: process.env.API_BASE_URL || "http://localhost:3000",
+      },
+    },
+    // Feature Tests - comprehensive integration tests
+    {
+      name: "features",
+      testMatch: "**/features/**/*.spec.ts",
+      use: {
+        ...devices["Desktop Chrome"],
+        // Feature tests use both UI and API
+        baseURL: process.env.UI_BASE_URL || "http://localhost:4200",
       },
     },
     /* Test against mobile viewports for UI tests only */
